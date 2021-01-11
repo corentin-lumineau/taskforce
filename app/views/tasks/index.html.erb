@@ -1,0 +1,26 @@
+<%=render "shared/navbar"%>
+<div class="container-l">
+    <div class="container-s">
+        <ul>
+            <%@tasks.each do |task|%>
+            <li><%=task.name%></li>
+            <%end%>
+        </ul>
+    </div>
+
+    <div class="container-s f f-c a-i-c ">
+      <div class="btn-1">Ajouter une nouvelle tâche</div>
+    </div>
+
+    <div class="container-s">
+        <ul>
+            <%@tasks.each do |task|%>
+            <li><%=task.name%></li>
+            <%end%>
+        </ul>
+    </div>
+</div>
+<%=render "shared/footer"%>
+
+  
+
