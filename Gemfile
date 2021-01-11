@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 gem 'bootstrap', '~> 5.0.0.beta1'
+gem "font-awesome-rails"
+gem "font-awesome-sass"
 
 
 group :development, :test do

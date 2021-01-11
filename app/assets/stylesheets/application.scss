@@ -1,7 +1,25 @@
 @import "bootstrap";
+@import "font-awesome";
+@import "font-awesome-sprockets";
 @import "components/index";
 @import "pages/index";
 
 a {
     text-decoration: none;
+}
+
+.f {
+    display: flex;
+}
+
+.f-sb {
+    justify-content: space-between;
+}
+
+.f-c {
+    justify-content: center;
+}
+
+.a-i-c {
+    align-items: center;
 }
