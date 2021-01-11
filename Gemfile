@@ -32,10 +32,13 @@ gem 'devise'
 gem 'bootstrap', '~> 5.0.0.beta1'
 gem "font-awesome-rails"
 gem "font-awesome-sass"
+gem 'simple_form'
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
