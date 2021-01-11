@@ -3,19 +3,24 @@
     <div class="container-s">
         <ul>
             <%@tasks.each do |task|%>
-            <li><%=task.name%></li>
+            <li><%=task.name%>
+            <%=link_to "supprimer", task_path(task), method: :delete%></li>
             <%end%>
         </ul>
     </div>
 
-    <div class="container-s f f-c a-i-c ">
-      <div class="btn-1">Ajouter une nouvelle tâche</div>
+    <div class="container-s f f-c a-i-c " id="add-task">
+        <div class="btn-1 crs" id="edit-task">
+            Ajouter une nouvelle tâche
+        </div>
+      <%=render "tasks/new"%>
     </div>
 
     <div class="container-s">
         <ul>
             <%@tasks.each do |task|%>
-            <li><%=task.name%></li>
+            <li><%=task.name%>
+            <%=link_to "supprimer", task_path(task), method: :delete%></li>
             <%end%>
         </ul>
     </div>

@@ -1,0 +1,22 @@
+<div class="bg-green">
+    <%=simple_form_for(@task, remote: true) do |f|%>
+        <%=f.input :name,
+                    label: "Titre",
+                    required: true
+                    %>
+        <%=f.input :description,
+                    label: "Decrivez votre tâche",
+                    required: true
+                    %>
+        <%=f.input :deadline,
+                    label: "Avant le...",
+                    required: true
+                    %>
+        <%=f.input :priority,
+                    label: "Priorité",
+                    required: true,
+                    as: :range
+                    %>
+        <%=f.button :submit, "Créer ma tâche", class: "btn-1"%>
+    <%end%>
+</div>
