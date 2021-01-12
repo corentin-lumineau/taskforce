@@ -1,9 +1,16 @@
 class TasksController < ApplicationController
+    before_action :index
 
     def index
         @tasks = Task.all
         @task = Task.new
         @user = current_user
+
+        # respond_to do |format|
+        #     format.html
+        #     format.json { render json: {tasks: @tasks} }
+        # end
+
     end
 
     def new

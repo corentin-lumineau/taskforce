@@ -1,5 +1,5 @@
 <div class="bg-green">
-    <%=simple_form_for(@task, remote: true) do |f|%>
+    <%=simple_form_for(@task, remote: true, data: { action: "click->tasks#refresh" }) do |f|%>
         <%=f.input :name,
                     label: "Titre",
                     required: true

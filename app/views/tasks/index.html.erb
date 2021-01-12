@@ -1,10 +1,15 @@
 <%=render "shared/navbar"%>
-<div class="container-l">
+<div class="container-l" >
     <div class="container-s">
-        <ul>
+        <ul class="task-list">
             <%@tasks.each do |task|%>
-            <li><%=task.name%>
-            <%=link_to "supprimer", task_path(task), method: :delete%></li>
+            <li>
+                <div class ="card" data-controller="tasks"  data-id= <%task.id%>>
+                    <%=task.name%>
+                    <%=task.id%>
+                    <%=link_to "supprimer", task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" }%>
+                </div>
+            </li>
             <%end%>
         </ul>
     </div>
