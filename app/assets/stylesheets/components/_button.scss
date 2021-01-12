@@ -12,3 +12,18 @@
       background-position: right center;
     }
 }
+
+.btn-2 {
+  background: white;
+  background-size: 200% auto;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #4FFE30;
+  transition: 0.5s;
+  font-family: Nunito;
+  &:hover {
+    text-decoration: none;
+    color: #4FFE30;
+    background-position: right center;
+  }
+}

@@ -4,9 +4,10 @@
         <ul class="task-list">
             <%@tasks.each do |task|%>
             <li>
-                <div class ="card" data-controller="tasks"  data-id= <%task.id%>>
+                <div class ="card-task" data-controller="tasks"  data-id= <%task.id%>>
                     <%=task.name%>
-                    <%=task.id%>
+                    <%=task.priority%>
+                    <%=task.deadline%>
                     <%=link_to "supprimer", task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" }%>
                 </div>
             </li>
@@ -14,7 +15,7 @@
         </ul>
     </div>
 
-    <div class="container-s f f-c a-i-c " id="add-task">
+    <div class="container-s f f-c a-i-c white box-none " id="add-task">
         <div class="btn-1 crs" id="edit-task">
             Ajouter une nouvelle tâche
         </div>
@@ -22,10 +23,16 @@
     </div>
 
     <div class="container-s">
-        <ul>
+         <ul class="task-list">
             <%@tasks.each do |task|%>
-            <li><%=task.name%>
-            <%=link_to "supprimer", task_path(task), method: :delete%></li>
+            <li>
+                <div class ="card-task" data-controller="tasks"  data-id= <%task.id%>>
+                    <%=task.name%>
+                    <%=task.priority%>
+                    <%=task.deadline%>
+                    <%=link_to "supprimer", task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" }%>
+                </div>
+            </li>
             <%end%>
         </ul>
     </div>

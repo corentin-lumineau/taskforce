@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :tasks
+  post '/tasks/fetch', to: 'tasks#fetch'
 end

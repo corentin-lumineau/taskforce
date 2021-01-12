@@ -1,22 +1,29 @@
-<div class="bg-green">
-    <%=simple_form_for(@task, remote: true, data: { action: "click->tasks#refresh" }) do |f|%>
+<div class="bg-green" data-controller = "tasks">
+    <%=simple_form_for(@task, remote: true, data: {'js-tutorial-form' => true}) do |f|%>
+    <div class="input-box">
         <%=f.input :name,
-                    label: "Titre",
-                    required: true
+                    label: "Titre"
                     %>
+    </div>
+    <div class="input-box">
         <%=f.input :description,
-                    label: "Decrivez votre tâche",
-                    required: true
+                    label: "Decrivez votre tâche"
                     %>
+    </div>
+    <div class="input-box">
         <%=f.input :deadline,
                     label: "Avant le...",
-                    required: true
+                    as: :date,
+                    html5: true
                     %>
+    </div>
+    <div class="input-box">
         <%=f.input :priority,
-                    label: "Priorité",
-                    required: true,
-                    as: :range
+                    collection: [ "Faible", "Modéré", "Important"],
+                    label: "Priorité"
                     %>
-        <%=f.button :submit, "Créer ma tâche", class: "btn-1"%>
+    </div>
+        <%=f.button :submit, "Créer ma tâche", data: { target: "tasks.trigger", action: "click->tasks#handleTrigger"}, class: "btn-2"%>
+   <div class="btn-2 display-inline fl-right">Annuler</div>
     <%end%>
 </div>
