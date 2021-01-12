@@ -1,16 +1,18 @@
 <%=render "shared/navbar"%>
 <div class="container-l" >
     <div class="container-s">
-        <ul class="task-list">
+        <ul class="task-list" id="tasks">
             <%@tasks.each do |task|%>
-            <li>
-                <div class ="card-task" data-controller="tasks"  data-id= <%task.id%>>
-                    <%=task.name%>
-                    <%=task.priority%>
-                    <%=task.deadline%>
-                    <%=link_to "supprimer", task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" }%>
-                </div>
-            </li>
+                <li>
+                    <div class ="card-task" data-controller="tasks" id= <%=task.id%>>
+                        <%=task.id%>
+                        <%=task.name%>
+                        <%=task.priority%>
+                        <%=task.deadline%>
+                        <%=link_to "supprimer", task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" }%>
+                    </div>
+                    <%=render 'show', task: task, class: "toto " %>
+                </li>
             <%end%>
         </ul>
     </div>

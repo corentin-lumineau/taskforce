@@ -27,3 +27,16 @@
 .task-list {
     list-style-type: none;
 }
+
+.bg-white {
+    background: white;
+    height: 50vh;
+    width: 50vh;
+    position: absolute;
+    z-index: 2;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: aqua;
+    box-shadow: aliceblue;
+    cursor: auto;
+}

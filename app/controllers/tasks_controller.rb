@@ -30,6 +30,10 @@ class TasksController < ApplicationController
         @task.save!
     end
 
+    def show
+        @task = Task.find(params[:id])
+    end
+
     def fetch
         render json: {html: render_to_string(partial: "task", locals: {task: @task})} 
     end

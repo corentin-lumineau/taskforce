@@ -1,6 +1,6 @@
 @import "bootstrap";
-@import "font-awesome";
 @import "font-awesome-sprockets";
+@import "font-awesome";
 @import "components/index";
 @import "pages/index";
 
@@ -67,3 +67,32 @@ input {
     float: right;
 }
 
+//MARGIN
+
+.mb-0{
+    margin-bottom: 0px;
+}
+
+//POSITION
+
+.p-a {
+    position: absolute;
+}
+
+.b-10 {
+    bottom: 10px;
+}
+
+.l-110 {
+    left: 110px;
+}
+
+//OPACITY
+
+.op-0 {
+    opacity: 0%;
+}
+
+.toto {
+    display: none;
+}
