@@ -1,15 +1,15 @@
 class TasksController < ApplicationController
-    before_action :index
+   
 
     def index
         @tasks = Task.all
         @task = Task.new
         @user = current_user
 
-        # respond_to do |format|
-        #     format.html
-        #     format.json { render json: {tasks: @tasks} }
-        # end
+        respond_to do |format|
+            format.html
+            format.json { render json: { html: render_to_string('index')} }
+        end
 
     end
 
@@ -28,6 +28,10 @@ class TasksController < ApplicationController
         @task.deadline = task_params[:deadline]
         @task.priority = task_params[:priority]
         @task.save!
+    end
+
+    def fetch
+        render json: {html: render_to_string(partial: "task", locals: {task: @task})} 
     end
 
     def destroy

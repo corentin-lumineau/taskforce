@@ -29,3 +29,41 @@ a {
 .crs {
     cursor: pointer;
 }
+
+//COLOR
+
+.white {
+    background-color: white;
+}
+
+//BOX-SHADOW
+
+.box-none {
+    box-shadow: none;
+}
+
+//FORM 
+
+label {
+    width: 240px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+input {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+//DISPLAY 
+
+.display-inline {
+    display: inline-block;
+}
+
+//FLOAT
+
+.fl-right {
+    float: right;
+}
+

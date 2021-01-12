@@ -2,9 +2,10 @@ const RESET_TIMEOUT_MILLIS = 3000;
 const CONFIRMATION_MESSAGE = '<strong>Are you sure?</strong>';
 
 import { Controller } from "stimulus";
+import Rails from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ['input'];
+  static targets = ['input', 'trigger'];
 
   connect() {
     this.tasks= false;
@@ -48,17 +49,20 @@ export default class extends Controller {
       this.tasks = false;
     }
   }
+
+  // send(event) {
+  //   this.triggerTarget.addEventListener('ajax:success', this.handleTrigger.bind(this));
+  // }
+
+ 
+
+  handleTrigger(event) {
+
+    Rails.ajax({
+      type: "post",
+      url: "/tasks",
+      success: console.log(this.inputTarget),
+      error: (data) => { console.log(data) }
+    })
+  }
 }
-    
-    
-
-    // fetch('/tasks', { 
-    //   method: 'DELETE',
-    //   data: task,
-    //   headers: { accept: "application/json" },
-    // })
-
-    // .then(response => response.json())
-    // .then((data) => {
-    //   console.log(data);
-    // });
