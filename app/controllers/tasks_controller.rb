@@ -52,7 +52,6 @@ class TasksController < ApplicationController
     end
 
     def show
-        raise
         @task = Task.find(params[:id])
         @comment = Comment.new
     end
