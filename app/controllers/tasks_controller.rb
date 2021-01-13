@@ -47,7 +47,7 @@ class TasksController < ApplicationController
         @task.save!
 
         if @task.save
-            redirect_to task_path(@task)
+            redirect_to tasks_path
         end
     end
 
