@@ -5,13 +5,23 @@
             <%@tasks.each do |task|%>
                 <li>
                     <div class ="card-task" data-controller="tasks" id= <%=task.id%>>
-                        <%=task.id%>
+                        <div class="details" id= <%=task.id%>>
                         <%=task.name%>
-                        <%=task.priority%>
-                        <%=task.deadline%>
-                        <%=link_to task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" } do%>
-                        <%= fa_icon "trash"%>
-                        <%end%>
+                            <%if task.priority == "Modéré" %>
+                                <i class="fas fa-leaf yellow"></i>
+                            <% elsif task.priority == "Important" %>
+                                <i class="fas fa-leaf red"></i>
+                            <% else %>
+                                <i class="fas fa-leaf"></i>
+                            <%end%>
+                            <%=task.deadline.strftime("%a, %d %b")%>
+                        </div>
+                        <div class="action">
+                            <i class="fas fa-check"></i>
+                            <%=link_to task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" } do%>
+                            <%= fa_icon "trash"%>
+                            <%end%>
+                        </div>
                     </div>
                     <%=render 'show', task: task, class: "toto " %>
                 </li>

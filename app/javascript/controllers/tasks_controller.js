@@ -1,5 +1,5 @@
 const RESET_TIMEOUT_MILLIS = 3000;
-const CONFIRMATION_MESSAGE = '<strong>Are you sure?</strong>';
+const CONFIRMATION_MESSAGE = '<strong>Sure?</strong>';
 
 import { Controller } from "stimulus";
 import Rails from "@rails/ujs";

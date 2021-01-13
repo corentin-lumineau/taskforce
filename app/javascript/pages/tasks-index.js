@@ -32,7 +32,7 @@ const showTask = () => {
     if (indexContainer) {
 
         const modaleTasks = document.querySelectorAll(".bg-white");
-        const btnTasks = document.querySelectorAll(".card-task");
+        const btnTasks = document.querySelectorAll(".details");
         const btnExits = document.querySelectorAll(".btn-1");
 
         const hideElement = (element) => {
@@ -49,7 +49,7 @@ const showTask = () => {
 
         btnTasks.forEach((btnTask) => { 
             btnTask.addEventListener("click", (event) => {
-              
+                console.log(btnTask);
                 const modaleTasks = document.querySelectorAll(".bg-white");
 
                 modaleTasks.forEach((modaleTask)=> {
