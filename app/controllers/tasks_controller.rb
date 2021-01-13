@@ -34,6 +34,10 @@ class TasksController < ApplicationController
         @task.deadline = task_params[:deadline]
         @task.priority = task_params[:priority]
         @task.save!
+
+        if @task.save
+            redirect_to tasks_path
+        end
     end
 
     def done
@@ -41,9 +45,14 @@ class TasksController < ApplicationController
         authorize @task
         @task.realized = true
         @task.save!
+
+        if @task.save
+            redirect_to task_path(@task)
+        end
     end
 
     def show
+        raise
         @task = Task.find(params[:id])
         @comment = Comment.new
     end
