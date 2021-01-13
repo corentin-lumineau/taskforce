@@ -9,4 +9,12 @@ class TaskPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def done?
+    return true
+  end
+
+  def destroy?
+    return true
+  end
 end

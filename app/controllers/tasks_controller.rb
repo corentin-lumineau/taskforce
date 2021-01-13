@@ -3,8 +3,12 @@ class TasksController < ApplicationController
 
     def index
         @tasks = policy_scope(Task)
+        @tasks_in_progress = @tasks.where(realized: false)
+        @tasks_done = @tasks.where(realized: true)
         @task = Task.new
+        @comment = Comment.new
         @user = current_user
+        
 
         respond_to do |format|
             format.html
@@ -21,7 +25,6 @@ class TasksController < ApplicationController
     end
 
     def create
-        
         @user = current_user
         @task = Task.new
         authorize @task
@@ -33,8 +36,16 @@ class TasksController < ApplicationController
         @task.save!
     end
 
+    def done
+        @task = Task.find(params[:id])
+        authorize @task
+        @task.realized = true
+        @task.save!
+    end
+
     def show
         @task = Task.find(params[:id])
+        @comment = Comment.new
     end
 
     def fetch
@@ -43,6 +54,7 @@ class TasksController < ApplicationController
 
     def destroy
         @task = Task.find(params[:id])
+        authorize @task
         @task.destroy
     end
 
