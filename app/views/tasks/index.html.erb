@@ -9,7 +9,9 @@
                         <%=task.name%>
                         <%=task.priority%>
                         <%=task.deadline%>
-                        <%=link_to "supprimer", task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" }%>
+                        <%=link_to task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" } do%>
+                        <%= fa_icon "trash"%>
+                        <%end%>
                     </div>
                     <%=render 'show', task: task, class: "toto " %>
                 </li>
