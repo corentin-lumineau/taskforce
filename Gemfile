@@ -35,6 +35,9 @@ gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'font_awesome5_rails'
 gem 'simple_form'
+gem 'pundit'
+gem 'cloudinary', '~> 1.16.0'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 group :development, :test do

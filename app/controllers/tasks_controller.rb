@@ -2,7 +2,7 @@ class TasksController < ApplicationController
    
 
     def index
-        @tasks = Task.all
+        @tasks = policy_scope(Task)
         @task = Task.new
         @user = current_user
 
@@ -20,6 +20,7 @@ class TasksController < ApplicationController
     end
 
     def create
+        authorize @task
         @user = current_user
         @task = Task.new
         @task.user = @user
