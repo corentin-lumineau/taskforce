@@ -16,13 +16,15 @@ class TasksController < ApplicationController
     def new
         @user = current_user
         @task = Task.new
+        authorize @task
         @task.user = @user
     end
 
     def create
-        authorize @task
+        
         @user = current_user
         @task = Task.new
+        authorize @task
         @task.user = @user
         @task.name = task_params[:name]
         @task.description = task_params[:description]
