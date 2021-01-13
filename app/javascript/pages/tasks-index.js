@@ -33,7 +33,7 @@ const showTask = () => {
 
         const modaleTasks = document.querySelectorAll(".bg-white");
         const btnTasks = document.querySelectorAll(".card-task");
-        const btnExits = document.querySelectorAll("exit-button");
+        const btnExits = document.querySelectorAll(".btn-1");
 
         const hideElement = (element) => {
             element.classList.add("d-none");
@@ -47,12 +47,9 @@ const showTask = () => {
             hideElement(modaleTask); 
         })
 
-        btnTasks.forEach((btnTask) => {
-
-            
+        btnTasks.forEach((btnTask) => { 
             btnTask.addEventListener("click", (event) => {
-                // const modaleTasks = document.querySelectorAll(".bg-white");
-                // const modaleTask = document.getElementById(`${event.currentTarget.id}`);
+              
                 const modaleTasks = document.querySelectorAll(".bg-white");
 
                 modaleTasks.forEach((modaleTask)=> {
@@ -60,46 +57,24 @@ const showTask = () => {
                         showElement(modaleTask);
                     } 
                 })
-               
-            //    console.log(event.currentTarget.id);
-            //    console.log(modaleTask.id);
-                
             })
-        })
-            
-            
-            // btnTask.addEventListener("click", (event) => {
-            //     showElement(modaleTask);
-            //  })
+        })    
 
-        
+        btnExits.forEach((btnExit) => {
+            btnExit.addEventListener("click", (event) => {
+                console.log(event.currentTarget.id);
+                const modaleTasks = document.querySelectorAll(".bg-white");
+    
+                modaleTasks.forEach((modaleTask)=> {
+                    if (modaleTask.id == event.currentTarget.id)  {
+                        hideElement(modaleTask);
+                    } 
+                })
+            })  
+        })
+      
     }
 }
-
-
-        
-        // btnTasks.forEach((btnTask) => {
-
-        //     const modaleTasks = document.querySelectorAll(".bg-white");
-            
-        //     modaleTasks.forEach((modaleTask) => {
-
-        //         btnTask.addEventListener("click", (event) => {
-        //             showElement(modaleTask);
-        //         });
-        //     })
-          
-        // })
-      
-
-        // btnExit.addEventListener("click", (event) => {
-        //     console.log(event);
-        //     modaleTask.classList.add("d-none");
-        //     hideElement(modaleTask);
-        //     console.log(modaleTask);
-        // })
-
-
 
 
 export { showEditTask };
