@@ -13,6 +13,13 @@
         <p>Avant le <%=task.deadline.strftime("%d %b %Y")%></p>
         <p><%=task.priority%></p>
     </div>
+    <div class="comment-container">
+        <%task.comments.each do |comment|%>
+        <div class="card-comment">
+            <%=comment.content%>
+        </div>
+        <%end%>
+    </div>
     <div class="btn-1 p-a b-10 l-200 crs" id="<%=task.id%>" >
         Sortir
     </div>
