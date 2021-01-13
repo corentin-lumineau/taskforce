@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2021_01_11_090042) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "task_id", null: false
+    t.bigint "task_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["task_id"], name: "index_comments_on_task_id"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_01_11_090042) do
     t.boolean "realized"
     t.date "deadline"
     t.string "priority"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
