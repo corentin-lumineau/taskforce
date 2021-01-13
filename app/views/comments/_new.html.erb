@@ -1,0 +1,9 @@
+<div class="bg-hard-green" id=<%task.id%>>
+   <%=simple_form_for [task, comment], remote: true do |f| %>
+      <%=f.input :content,
+                  label: "Commentaires"%>
+      <%=f.button :submit, "Valider", class:"btn-2"%>
+   <%end%>
+
+   <div class="btn-2 crs">Annuler</div>
+</div>

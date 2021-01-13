@@ -49,7 +49,7 @@ const showTask = () => {
 
         btnTasks.forEach((btnTask) => { 
             btnTask.addEventListener("click", (event) => {
-                console.log(btnTask);
+                
                 const modaleTasks = document.querySelectorAll(".bg-white");
 
                 modaleTasks.forEach((modaleTask)=> {

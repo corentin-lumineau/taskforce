@@ -9,11 +9,13 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "controllers";
-import { showEditTask, showTask } from '../pages/tasks-index';
+import { showEditTask, showTask } from '../pages/tasks_index';
+import { showComment } from '../pages/comments_show';
 
 document.addEventListener('turbolinks:load', () => {
     showEditTask();
     showTask();
+    showComment();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
