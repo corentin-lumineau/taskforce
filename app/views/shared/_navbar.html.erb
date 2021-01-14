@@ -14,15 +14,6 @@
         <li class="nav-item active">
           <%= link_to "LogOut", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
-        <%if current_user.photo != nil %>
-          <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-            </div>
-          </li>
-        <%end%>
       <%else%>
         <li class="nav-item active">
             <%= link_to "LogIn", new_user_session_path, class: "nav-link" %>
