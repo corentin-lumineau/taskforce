@@ -15,7 +15,9 @@
                             <% else %>
                                 <i class="fas fa-leaf"></i>
                             <%end%>
-                            <%=task.deadline.strftime("%a, %d %b")%>
+                            <%if task.deadline != nil%>
+                                <%=task.deadline.strftime("%a, %d %b")%>
+                            <%end%>
                         </div>
                         <div class="action">
                         <%= link_to task_done_path(task), method: :patch, remote: true do%> 
@@ -55,7 +57,9 @@
                             <% else %>
                                 <i class="fas fa-leaf"></i>
                             <%end%>
-                            <%=task.deadline.strftime("%a, %d %b")%>
+                            <%if task.deadline != nil%>
+                                <%=task.deadline.strftime("%a, %d %b")%>
+                            <%end%>
                         </div>
                         <div class="action">
                             <%=link_to task_path(task), method: :delete, remote: true, data: { target: "tasks.input", action: "ajax:beforeSend->tasks#delete" } do%>
@@ -68,6 +72,16 @@
             <%end%>
         </ul>
         <%end%>
+    </div>
+</div>
+<div class="container-bottom">
+    <div class="in-progress fs-35">
+        <i class="fas fa-business-time"></i>
+    </div>
+    <div class="in-progress">
+    </div>
+    <div class="in-progress fs-35">
+        <i class="fas fa-clipboard-check"></i>
     </div>
 </div>
 <%=render "shared/footer"%>
