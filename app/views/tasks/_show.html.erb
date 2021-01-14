@@ -19,7 +19,7 @@
     </div>
     <div class="comment-container">
         <%task.comments.each do |comment|%>
-        <%=link_to task_comment_path(task,comment), method: :delete, remote: true do%>
+            <%=link_to task_comment_path(task,comment), method: :delete, remote: true do%>
             <div class="card-comment" data-tooltip="supprimer commentaire?">
                 <%=comment.content%>
             </div>
