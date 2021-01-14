@@ -24,13 +24,14 @@
 }
 
 .bg-green {
-    background: #4FFE30;
+    background: green;
     height: 46vh;
     opacity: 80%;
     position: absolute;
     z-index : 2;
     border-radius : 20px;
     padding: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08)
 }
 
 .task-list {
@@ -46,8 +47,6 @@
     z-index: 2;
     border-radius: 20px;
     padding: 20px;
-    box-shadow: aqua;
-    box-shadow: aliceblue;
     cursor: auto;
 }
 
