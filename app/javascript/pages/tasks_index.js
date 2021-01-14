@@ -62,7 +62,6 @@ const showTask = () => {
 
         btnExits.forEach((btnExit) => {
             btnExit.addEventListener("click", (event) => {
-                console.log(event.currentTarget.id);
                 const modaleTasks = document.querySelectorAll(".bg-white");
     
                 modaleTasks.forEach((modaleTask)=> {

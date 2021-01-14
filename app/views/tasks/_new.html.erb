@@ -1,29 +1,29 @@
 <div class="bg-green" data-controller = "tasks">
     <%=simple_form_for(@task, remote: true, data: {'js-tutorial-form' => true}) do |f|%>
-    <div class="input-box">
-        <%=f.input :name,
-                    label: "Titre"
-                    %>
-    </div>
-    <div class="input-box">
-        <%=f.input :description,
-                    label: "Decrivez votre tâche"
-                    %>
-    </div>
-    <div class="input-box">
-        <%=f.input :deadline,
-                    label: "Avant le...",
-                    as: :date,
-                    html5: true
-                    %>
-    </div>
-    <div class="input-box mb-60">
-        <%=f.input :priority,
-                    collection: [ "Faible", "Modéré", "Important"],
-                    label: "Priorité"
-                    %>
-    </div>
-        <%=f.button :submit, "Créer ma tâche", data: { target: "tasks.trigger", action: "click->tasks#handleTrigger"}, class: "btn-2"%>
-   <div class="btn-2 display-inline fl-right crs" id="exit-edit">Annuler</div>
+        <div class="input-box">
+            <%=f.input :name,
+                        label: "Titre"
+                        %>
+        </div>
+        <div class="input-box">
+            <%=f.input :description,
+                        label: "Decrivez votre tâche"
+                        %>
+        </div>
+        <div class="input-box">
+            <%=f.input :deadline,
+                        label: "Avant le...",
+                        as: :date,
+                        html5: true
+                        %>
+        </div>
+        <div class="input-box mb-60">
+            <%=f.input :priority,
+                        collection: [ "Faible", "Modéré", "Important"],
+                        label: "Priorité"
+                        %>
+        </div>
+            <%=f.button :submit, "Créer ma tâche", data: { target: "tasks.trigger", action: "click->tasks#handleTrigger"}, class: "btn-2"%>
+        <div class="btn-2 display-inline fl-right crs" id="exit-edit">Annuler</div>
     <%end%>
 </div>

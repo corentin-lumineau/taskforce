@@ -1,13 +1,11 @@
 <div class="bg-hard-green" id=<%task.id%>>
    <%=simple_form_for [task, comment], remote: true do |f| %>
-   <div class="input-box mb-50">
-      <%=f.input :content,
-                  label: "Commentaires",
-                  class: "w-100"%>
-   </div>
+      <div class="input-box mb-50">
+         <%=f.input :content,
+                     label: "Commentaires",
+                     class: "w-100"%>
+      </div>
       <%=f.button :submit, "Valider", class:"btn-2"%>
       <div class="btn-2 display-inline fl-right crs">Annuler</div>
-   <%end%>
-
-   
+   <%end%> 
 </div>

@@ -6,11 +6,6 @@
     color: white;
     transition: 0.5s;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-    &:hover {
-      text-decoration: none;
-      color: white;
-      background-position: right center;
-    }
 }
 
 .btn-2 {
@@ -21,9 +16,4 @@
   color: #4FFE30;
   transition: 0.5s;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
-  &:hover {
-    text-decoration: none;
-    color: #4FFE30;
-    background-position: right center;
-  }
 }

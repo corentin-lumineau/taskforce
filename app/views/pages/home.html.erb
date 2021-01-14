@@ -1,13 +1,11 @@
 <%= render "shared/navbar" %>
 
-<div class="bg-banner"><h1>Welcome to TaskForce</h1>
-</div>
+<div class="bg-banner"><h1>Welcome to TaskForce</h1></div>
+
 <%if signed_in?%>
-<div class="home-content"><%= link_to "START", tasks_path, class: "btn-1" %>
-</div>
+    <div class="home-content"><%= link_to "START", tasks_path, class: "btn-1" %></div>
 <%else%>
-<div class="home-content"><%= link_to "START", new_user_session_path, class: "btn-1" %>
-</div>
+    <div class="home-content"><%= link_to "START", new_user_session_path, class: "btn-1" %></div>
 <%end%>
 
 
