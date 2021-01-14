@@ -4,14 +4,16 @@
             <h3><%=task.name%></h3>
         </div>
         <%= render 'comments/new', task: task, comment: @comment, class: "toto" %>
-        <div class="task-comment" id="<%task.id%>">
-            <i class="fas fa-comment crs"></i>
-        </div>
+        <%if task.realized == false%>
+            <div class="task-comment" id="<%task.id%>">
+                <i class="fas fa-comment crs"></i>
+            </div>
+        <%end%>
     </div>
     <div class="details-show">
         <p><%=task.description%></p>
         <p>Avant le <%=task.deadline.strftime("%d %b %Y")%></p>
-        <p><%=task.priority%></p>
+        <p class= "mb-0"><%=task.priority%></p>
     </div>
     <div class="comment-container">
         <%task.comments.each do |comment|%>
