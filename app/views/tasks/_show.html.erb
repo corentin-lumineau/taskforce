@@ -12,7 +12,9 @@
     </div>
     <div class="details-show">
         <p><%=task.description%></p>
+        <%if task.deadline != nil%>
         <p>Avant le <%=task.deadline.strftime("%d %b %Y")%></p>
+        <%end%>
         <p class= "mb-0"><%=task.priority%></p>
     </div>
     <div class="comment-container">
