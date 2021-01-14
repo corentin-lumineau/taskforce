@@ -1,5 +1,7 @@
 const RESET_TIMEOUT_MILLIS = 3000;
-const CONFIRMATION_MESSAGE = '<strong>Sure?</strong>';
+const CONFIRMATION_MESSAGE = "<strong>Sure?</strong>";
+
+
 
 import { Controller } from "stimulus";
 import Rails from "@rails/ujs";
@@ -10,8 +12,6 @@ export default class extends Controller {
   connect() {
     this.tasks= false;
   }
-
- 
 
   delete(event) {
     if(this.tasks) {
@@ -50,19 +50,4 @@ export default class extends Controller {
     }
   }
 
-  // send(event) {
-  //   this.triggerTarget.addEventListener('ajax:success', this.handleTrigger.bind(this));
-  // }
-
- 
-
-  handleTrigger(event) {
-
-    Rails.ajax({
-      type: "post",
-      url: "/tasks",
-      success: console.log(this.inputTarget),
-      error: (data) => { console.log(data) }
-    })
-  }
 }

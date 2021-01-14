@@ -21,6 +21,10 @@ a {
     display: flex;
 }
 
+.f-none {
+    display: block;
+}
+
 .f-sb {
     justify-content: space-between;
 }
@@ -51,6 +55,10 @@ a {
 
 .red {
     color: red;
+}
+
+.green {
+    color: green;
 }
 
 //BOX-SHADOW
