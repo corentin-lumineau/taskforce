@@ -1,7 +1,7 @@
 <div class="bg-white d-none" id="<%=task.id%>">
     <div class="header">
         <div class="task-header">
-            <h3><%=task.name%></h3>
+            <h5><%=task.name%></h5>
         </div>
         <%= render 'comments/new', task: task, comment: @comment, class: "toto" %>
         <%if task.realized == false%>
@@ -13,19 +13,20 @@
     <div class="details-show">
         <p><%=task.description%></p>
         <%if task.deadline != nil%>
-        <p>Avant le <%=task.deadline.strftime("%d %b %Y")%></p>
+            <p>Avant le <%=task.deadline.strftime("%d %b %Y")%></p>
         <%end%>
         <p class= "mb-0"><%=task.priority%></p>
     </div>
     <div class="comment-container">
         <%task.comments.each do |comment|%>
-        <div class="card-comment">
-            <%=comment.content%>
-        </div>
+        <%=link_to task_comment_path(task,comment), method: :delete, remote: true do%>
+            <div class="card-comment" data-tooltip="supprimer commentaire?">
+                <%=comment.content%>
+            </div>
+            <%end%>
         <%end%>
     </div>
     <div class="btn-1 p-a b-10 l-200 crs" id="<%=task.id%>" >
         Sortir
     </div>
-    
 </div>

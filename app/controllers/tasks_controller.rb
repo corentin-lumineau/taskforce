@@ -8,13 +8,6 @@ class TasksController < ApplicationController
         @task = Task.new
         @comment = Comment.new
         @user = current_user
-        
-
-        respond_to do |format|
-            format.html
-            format.json { render json: { html: render_to_string('index')} }
-        end
-
     end
 
     def new
@@ -33,7 +26,7 @@ class TasksController < ApplicationController
         @task.description = task_params[:description]
         @task.deadline = task_params[:deadline]
         @task.priority = task_params[:priority]
-        @task.save!
+        @task.save
 
         if @task.save
             redirect_to tasks_path
@@ -44,7 +37,7 @@ class TasksController < ApplicationController
         @task = Task.find(params[:id])
         authorize @task
         @task.realized = true
-        @task.save!
+        @task.save
 
         if @task.save
             redirect_to tasks_path
@@ -56,10 +49,6 @@ class TasksController < ApplicationController
         @comment = Comment.new
     end
 
-    def fetch
-        render json: {html: render_to_string(partial: "task", locals: {task: @task})} 
-    end
-
     def destroy
         @task = Task.find(params[:id])
         authorize @task
@@ -67,18 +56,11 @@ class TasksController < ApplicationController
     end
 
 
-
     def edit
        @task = Task.last
     end
 
-    # def update
-    #     @task = 
-    #     @task.name = task_params["name"]
-    #     @task.description = task_params["description"]
-    #     @task.deadline = task_params["deadline"]
-    #     @task.priority = task_params["priority"]
-    # end
+
 
     private
 
